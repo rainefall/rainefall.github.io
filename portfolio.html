@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>rileyweb | portfolio</title>
+        <link rel="stylesheet" href="normalise.css">
+        <link rel="stylesheet" href="main.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    </head>
+
+    <body>
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a  href="games.html">Games</a>
+            <a href="music.html">Music</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="main">
+            <div class="content">
+                <h1>rileyweb | portfolio</h1>
+                <div class="alignleft">
+                    <div class="imgcell"><img src="img/autorhythm.jpg"></div>
+                    <div class="porttext">
+                        <h2>AutoRhythm (All Roles)</h2>
+                        <p>Started as a clone of the 2009 rhythm puzzler “AudioSurf”. I created it as part of my A level computer science coursework. Initially written using a custom game engine of mine, I was forced to switch to the Godot engine after my custom engine’s renderer inexplicably broke and I did not have time to fix it. I had never used Godot but I was able to learn how to use it and the native code interface gdnative, which I needed in order to perform audio analysis to generate levels, in just a few weeks. I did not write my own audio analysis code from scratch, I made use of the helper library aubio for transient, frequency and loudness detection. Audio was decoded using Fmod’s low level API, which I ported to Godot myself mainly because I needed direct and fast access to the raw audio data, which existing Fmod ports could not give me (I only ported functions I needed to save development time).<br><a href="https://github.com/rainefall/autorhythm">Source code available on Github</a></p>
+                    </div>
+                </div>
+                <h2>Derivative Works</h2>
+                <p>Between 2016 and 2020 (and briefly again in 2022) I was a large fan of derivative works, particularly those of the popular Pokémon franchise. I made a few games, not all of which were released, but I have listed the two most important games here.</p>
+                <div class="alignright">
+                    <div class="porttext">
+                        <h2>Pokémon Reflections (Director, Programming, UI/UX Design)</h2><h3>“A traditional 8-gym Pokémon game. Or is it? Only one way to find out”</h3>
+                        <p>Reflections is a game I made despite saying I would never make another game like it. Also created during a ~1 month game jam, this time in 2022, the theme of which was “simplicity”. It is a parody/commentary on JRPGs, initially presented as a traditional Pokémon style game and eventually becoming more of a visual novel as the game breaks the fourth wall to ask the player why they chose to keep playing.
+                        On this game I did a considerable amount of UI design, in order to sell the idea of a fresh new game despite the major internal gameplay changes I made to parody the JRPG genre and turn based battles.</p>
+                    </div>
+                    <div class="imgcell"><img src="img/reflections.png"></div>
+                </div>
+                <div class="alignleft">
+                    <div class="imgcell"><img src="img/midnight.png"></div>
+                    <div class="porttext">
+                        <h2>Pokémon Midnight (All Roles)</h2><h3>“Welcome to Neo-Saffron. Under the watchful eye of the Neon Corporation, life is difficult. Now a group of individuals have come together to fix this. To find an escape from this midnight city.”</h3>
+                        <p>This game was created during a ~1 month long game jam in 2020, the theme of which was “Escape”. Almost all aspects of the creation this game were handled by myself, though my poor project management skills at the time prevented me from finishing it completely. The game was somewhat notable for being one of the few games in the community to run at 60fps. This was done by “porting” the game to a new framework called mkxp-z. While mkxp-z did somewhat support the engine I was using (RPG Maker XP with Pokémon Essentials as a game base), it was never a drag and drop port, and this was before mainstream adoption of mkxp-z as the default framework among the Pokémon Essentials community, so I was on my own for a lot of issues I had with changes to framerate etc. Essentials is not particularly well documented and RPG Maker XP has zero code debugging tools, but I was still able to port over my game with relative ease.</p>
+                    </div>
+                </div>
+                <h2>Miscellaneous Projects</h2>
+                <div class="alignright">
+                    <div class="porttext">
+                        <h2>bfgame</h2>
+                        <p>This is an interpreter for the esoteric programming language brainf**k, designed to make it “possible” to create graphical games. The I/O is very simple, eight digital buttons in, a 64x64 1bpp display out, no sound. Display is written to using the first 512 bytes of the interpreter’s memory. I am yet to write a game using it, though logically it should be possible to write functional if basic games with it, and I intend to write a compiler to simplify that process at some point in the future mostly to prove that it can run games. You can view the source code for the interpreter <a href="https://github.com/rainefall/bfgame">here</a>.</p>
+                    </div>
+                    <div class="imgcell"><img src="img/bfgame.png"></div>
+                </div>
+                <div class="alignleft">
+                    <div class="imgcell"><img src="img/graviton.gif"></div>
+                    <div class="porttext">
+                        <h2>Graviton</h2>
+                        <p>A 3D puzzle “concept” about changing gravity. Specifically, the player would fire a gun at a wall, and the force of gravity would change to pull the player and any physics objects in a direction inverse to the normal vector of the wall it hit. I have ideas as to how I would expand on this concept (such as sliding doors on rails, “cube and button based puzzles” like in the portal series, objects that the player cant pick up but can be moved by shifting gravity) but I’ve kept it on the back burner for a while since I have greater interest in other game ideas of mine. There exists a semi functional prototype written in C <a href="https://github.com/rainefall/Graviton-Prototype">here</a> and I also began working on a Unity version though I struggled to get unity to play nicely with the concept of changing view and gravity vectors, unlike my custom C engine with the Bullet physics library. Speaking of C and Bullet, at the time of development there was no robust C binding for Bullet, and for some reason instead of switching to C++, I decided to write my own. It was the first time I had ever attempted any C -> C++ mixing, and I think it went quite well considering I neglected to ever google the question “how do I use C++ classes in C”.
+                        </p>
+                    </div>
+                </div>
+                <div class="alignright">
+                    <div class="porttext">
+                        <h2>The Many Game Engines</h2>
+                        <p>As a programmer first and foremost I prefer working in programming heavy environments. This had led me to attempt to create my own game engines for personal projects, often in C++ with OpenGL, occasionally C or C#. I unfortunately don’t have the free time to develop a full 3D game engine from scratch and also design + program an entire game in that engine, so these engines are often mostly short experiments before I return to using a tried and tested existing solution such as Unity/Godot (or as of quite recently GameMaker Studio 2). I have come very close to developing a full game with a custom C++ engine however, this was due to multiple people involved in the project initially opting for a custom solution, though we slowly realised that the “make games not engines” principle very much matters for small hobbyist teams. That engine was called southwest, and the now barely functional is available on github. I am also passively working on a framework in C# using FNA as a base called GameStage while I determine if GameMaker Studio 2 is viable for the ARPG I am looking to make. In the past I have worked an engine by the name Saltwater (some boilerplate of which can be found in southwest) and CRGSS (a framework inspired by RGSS of the RPG Maker series written in and for the Crystal programming language, though this was long before Crystal was usable on Windows so it was difficult to work on once software incompatibilities forced me to abandon Linux)
+                        </p>
+                    </div>
+                    <div class="imgcell"><img src="img/saltwater.gif"></div>
+                </div>
+                <p>My <a href="https://github.com/rainefall">github page</a> contains some less notable WIP/generally unfinished projects.</p>
+                <h2 id="musicportfolio">The music section of the portfolio</h2>
+                <p>I have written plenty of original music for my unreleased personal projects <a href="https://soundcloud.com/rrainefall">here</a>.</p>
+                <div class="alignleft">
+                    <div class="imgcell"><iframe style="border: 0; width:100%; aspect-ratio: 1;" src="https://bandcamp.com/EmbeddedPlayer/album=2299733542/size=large/bgcol=333333/linkcol=fe7eaf/minimal=true/transparent=true/" seamless><a href="https://rainefall.bandcamp.com/album/unaltered-music-collection">Unaltered: Music Collection by rainefall</a></iframe></div>
+                    <div class="porttext">
+                        <h2><a href="https://rainefall.bandcamp.com/album/unaltered-music-collection">Unaltered (2019-ongoing)</a></h2>
+                        <p>A JRPG by a friend of mine which I wrote/am writing parts of the soundtrack for. I took a lot of influence from the Pokémon series, as well as Xenoblade Chronicles and Persona 4.</p>
+                    </div>
+                </div>
+                <div class="alignleft">
+                    <div class="porttext">
+                        <h2><a href="https://rainefall.bandcamp.com/album/reflections-sountrack-side-a">Pokémon Reflections (2022)</a></h2>
+                        <p>Due to the split nature of this game the soundtrack is split between Pokémon-style with acid-jazz influence in the vein of Persona 5 in the first half and noise rock/industrial in the latter half (note: this half of the soundtrack is not currently available for download to avoid spoiling the game for its target audience). It’s definitely on the more complex side in terms of soundtracks I have written, featuring extensive use of leitmotif, live instrumental, and unconventional production techniques.</p>
+                    </div>
+                    <div class="imgcell"><iframe style="border: 0; width:100%; aspect-ratio: 1;" src="https://bandcamp.com/EmbeddedPlayer/album=3137843695/size=large/bgcol=333333/linkcol=fe7eaf/minimal=true/transparent=true/" seamless><a href="https://rainefall.bandcamp.com/album/reflections-sountrack-side-a">Reflections Sountrack - Side A by rainefall</a></iframe></div>
+                </div>
+                <div class="alignleft">
+                    <div class="imgcell"><iframe width="100%" src="https://www.youtube.com/embed/videoseries?list=PLdXNVgbnVpA3TCbUcGNa9Hu181iH1nKLL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                    <div class="porttext">
+                        <h2><a href="https://youtube.com/playlist?list=PLdXNVgbnVpA3TCbUcGNa9Hu181iH1nKLL">DELTAWAVE (2021-ongoing)</a></h2>
+                        <p>An ongoing project to cover the soundtrack of Toby Fox’s ongoing episodic RPG Deltarune in a retrofuturistic 80s style. I began with a cover of the ever popular battle theme “BIG SHOT” from the second chapter of the game and slowly worked on more and more tracks over the months. Many remain unreleased though there are quite a few up on YouTube, the BIG SHOT cover notably surpassed 100,000 views which is something I didn’t ever expect to happen. It has been a great exercise for my production and arranging skills, and like a lot of my major bursts of musical productivity, partially reinvented my entire sound as a musician.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
