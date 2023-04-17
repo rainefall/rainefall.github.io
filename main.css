@@ -10,7 +10,6 @@
     background-image: url("bg.png");
     background-attachment: fixed;
     width: 100%;
-    min-height: 100vh;
 }
 
 .content {
