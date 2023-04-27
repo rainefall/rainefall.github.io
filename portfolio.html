@@ -3,15 +3,32 @@
         <title>rileyweb | portfolio</title>
         <link rel="stylesheet" href="normalise.css">
         <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="portfolio.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     </head>
 
+    <script>
+        function openTab(evt, tabId) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(tabId).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+    </script>
+
     <body>
         <div class="header">
-            <img src="rainefall.png" width=25%>
+            <img src="rainefall.png" style="max-height:10vh; max-width: 90vw;">
         </div>
         <div class="navbar">
             <a href="index.html">Home</a>
@@ -23,37 +40,30 @@
         <div class="main">
             <div class="content">
                 <h1>portfolio</h1>
-                <div class="alignright">
-                    <div class="imgcell"><img src="img/autorhythm.jpg"></div>
-                    <div class="porttext">
-                        <h2>AutoRhythm (All Roles)</h2>
-                        <p>Started as a clone of the 2009 rhythm puzzler “AudioSurf”. I created it as part of my A level computer science coursework. Initially written using a custom game engine of mine, I was forced to switch to the Godot engine after my custom engine’s renderer inexplicably broke and I did not have time to fix it. I had never used Godot but I was able to learn how to use it and the native code interface gdnative, which I needed in order to perform audio analysis to generate levels, in just a few weeks. I did not write my own audio analysis code from scratch, I made use of the helper library aubio for transient, frequency and loudness detection. Audio was decoded using Fmod’s low level API, which I ported to Godot myself mainly because I needed direct and fast access to the raw audio data, which existing Fmod ports could not give me (I only ported functions I needed to save development time).<br><a href="https://github.com/rainefall/autorhythm">Source code available on Github</a></p>
-                    </div>
+                <div class="tab">
+                    <button id="autorhythm" class="tablinks active" onclick="openTab(event, 'autorhythm_content')"><img src="img/autorhythm_logo.png"></button>
+                    <button id="reflections" class="tablinks" onclick="openTab(event, 'reflections_content')"><img src="img/reflections_logo.png"></button>
+                    <button id="precognition" class="tablinks" onclick="openTab(event, 'precognition_content')"><img src="img/precognition_logo.png"></button>
+                    <button id="pivot" class="tablinks" onclick="openTab(event, 'pivot_content')"><img src="img/pivot_logo.png"></button>
                 </div>
-                <h2>Derivative Works</h2>
-                <p>Between 2016 and 2020 (and briefly again in 2022/2023 for some game jams) I was a large fan of derivative works, particularly those of the popular Pokémon franchise. I worked on several projects/games within online communities revolving around these works, such as <a href="https://twitter.com/UnalteredGame">Unaltered</a> (Composer, Programmer 2019-2022) and <a href="https://twitter.com/pkmnpr">Phoenix Rising</a> (Programmer 2019-present). I also made a few games of my own, not all of which were released, but I have listed the most important games here.</p>
-                <div class="alignleft">
-                    <div class="imgcell"><img src="img/midnight.png"></div>
-                    <div class="porttext">
-                        <h2>Pokémon Midnight (2020, All Roles)</h2><h3>“Welcome to Neo-Saffron. Under the watchful eye of the Neon Corporation, life is difficult. Now a group of individuals have come together to fix this. To find an escape from this midnight city.”</h3>
-                        <p>This game was created during a ~1 month long game jam in 2020, the theme of which was “Escape”. Almost all aspects of the creation this game were handled by myself, though my poor project management skills at the time prevented me from finishing it completely. The game was somewhat notable for being one of the few games in the community to run at 60fps. This was done by “porting” the game to a new framework called mkxp-z. While mkxp-z did somewhat support the engine I was using (RPG Maker XP with Pokémon Essentials as a game base), it was never a drag and drop port, and this was before mainstream adoption of mkxp-z as the default framework among the Pokémon Essentials community, so I was on my own for a lot of issues I had with changes to framerate etc. Essentials is not particularly well documented and RPG Maker XP has zero code debugging tools, but I was still able to port over my game with relative ease.</p>
-                    </div>
+                <div id="autorhythm_content" class="tabcontent" style="display: block;">
+                    <h2>AutoRhythm (2022, All Roles)</h2>
+                    <p>Started as a clone of the 2009 rhythm puzzler “AudioSurf”. I created it as part of my A level computer science coursework. Initially written using a custom game engine of mine, I was forced to switch to the Godot engine after my custom engine’s renderer inexplicably broke and I did not have time to fix it. I had never used Godot but I was able to learn how to use it and the native code interface gdnative, which I needed in order to perform audio analysis to generate levels, in just a few weeks. I did not write my own audio analysis code from scratch, I made use of the helper library aubio for transient, frequency and loudness detection. Audio was decoded using Fmod’s low level API, which I ported to Godot myself mainly because I needed direct and fast access to the raw audio data, which existing Fmod ports could not give me (I only ported functions I needed to save development time).<br><a href="https://github.com/rainefall/autorhythm">Source code available on Github</a></p>
                 </div>
-                <div class="alignright">
-                    <div class="porttext">
-                        <h2>Reflections (2022, Director, Programming, UI/UX Design)</h2><h3>“A traditional 8-gym Pokémon game. Or is it? Only one way to find out”</h3>
-                        <p>Reflections is a game I made despite saying I would never make another game like it. Also created during a ~1 month game jam, this time in 2022, the theme of which was “simplicity”. It is a parody/commentary on JRPGs, initially presented as a traditional Pokémon style game and eventually becoming more of a visual novel as the game breaks the fourth wall to ask the player why they chose to keep playing.
-                        On this game I did a considerable amount of UI design, in order to sell the idea of a fresh new game despite the major internal gameplay changes I made to parody the JRPG genre and turn based battles.</p>
-                    </div>
-                    <div class="imgcell"><img src="img/reflections.png"></div>
+                <div id="reflections_content" class="tabcontent">
+                    <h2>Reflections (2022, Director, Programming, UI/UX Design)</h2><h3>“A traditional 8-gym Pokémon game. Or is it? Only one way to find out”</h3>
+                    <p>Reflections is a game I made despite saying I would never make another game like it. Also created during a ~1 month game jam, this time in 2022, the theme of which was “simplicity”. It is a parody/commentary on JRPGs, initially presented as a traditional Pokémon style game and eventually becoming more of a visual novel as the game breaks the fourth wall to ask the player why they chose to keep playing.
+                    On this game I did a considerable amount of UI design, in order to sell the idea of a fresh new game despite the major internal gameplay changes I made to parody the JRPG genre and turn based battles.</p>
                 </div>
-                <div class="alignleft">
-                    <div class="imgcell"><img src="img/precog.gif"></div>
-                    <div class="porttext">
-                        <h2>pre;COGNITION (2023, Director, Programming, UI/UX Design)</h2><h3>“Embark on a journey of adventure, mystery, and discovery... again, and again.”</h3>
-                        <p>Despite saying that after the release of Pokémon Reflections I would never again make a game with RPG Maker XP, I returned to Relic Castle's game jam scene with my most ambitious project to date. It began life as a roguelite but it slowly morphed into more of a clone of the game Outer Wilds but with a roguelite Pokémon gameplay loop surrounding the mystery and the time shenanigans. Part of the ambition came from the fact that I once again decided to completely remake all the UI from scratch, but also from the fact that in some ways it was a radically different kind of game to what RPG Maker is generally used for. A large chunk of the engine's internal workings had to be changed to cooperate with the time loop mechanics as well as my decision to use a larger screen resolution than the average RPG Maker game, and my overuse of (by RPG Maker standards) "complex" graphical effects.</p>
-                    </div>
+                <div id="precognition_content" class="tabcontent">
+                    <h2>pre;COGNITION (2023, Director, Programming, UI/UX Design)</h2><h3>“Embark on a journey of adventure, mystery, and discovery... again, and again.”</h3>
+                    <p>Despite saying that after the release of Pokémon Reflections I would never again make a game with RPG Maker XP, I returned to Relic Castle's game jam scene with my most ambitious project to date. It began life as a roguelite but it slowly morphed into more of a clone of the game Outer Wilds but with a roguelite Pokémon gameplay loop surrounding the mystery and the time shenanigans. Part of the ambition came from the fact that I once again decided to completely remake all the UI from scratch, but also from the fact that in some ways it was a radically different kind of game to what RPG Maker is generally used for. A large chunk of the engine's internal workings had to be changed to cooperate with the time loop mechanics as well as my decision to use a larger screen resolution than the average RPG Maker game, and my overuse of (by RPG Maker standards) "complex" graphical effects.</p>
                 </div>
+                <div id="pivot_content" class="tabcontent">
+                    <h2>Pivot (2023, Programmer)</h2><h3>“It's pivoting time! Zzt!”</h3>
+                    <p>Pivot is a multiplayer online battle arena (MOBA) game made using RPG Maker XP. Also a project made during the aforementioned Relic Castle game jams, but one that I joined the team for after the jam had finished, fixing critical bugs and issues with the game engine that the team would otherwise been forced to accept and ignore. I also developed the game's updater, learning PHP to build a server side patch generator to reduce download times for the end users.</p>
+                </div>
+                <hr>
                 <h2>Miscellaneous Projects</h2>
                 <div class="alignright">
                     <div class="porttext">
@@ -62,6 +72,7 @@
                     </div>
                     <div class="imgcell"><img src="img/bfgame.png"></div>
                 </div>
+                <hr>
                 <div class="alignleft">
                     <div class="imgcell"><img src="img/graviton.gif"></div>
                     <div class="porttext">
@@ -70,6 +81,7 @@
                         </p>
                     </div>
                 </div>
+                <hr>
                 <div class="alignright">
                     <div class="porttext">
                         <h2>The Many Game Engines</h2>
@@ -79,7 +91,8 @@
                     <div class="imgcell"><img src="img/saltwater.gif"></div>
                 </div>
                 <p>My <a href="https://github.com/rainefall">github page</a> contains some less notable WIP/generally unfinished projects.</p>
-                <h2 id="musicportfolio">The music section of the portfolio</h2>
+                <hr>
+                <h2 id="musicportfolio">Music</h2>
                 <p>I have written plenty of original music for my unreleased personal projects <a href="https://soundcloud.com/rrainefall">here</a>.</p>
                 <div class="alignleft">
                     <div class="imgcell"><iframe style="border: 0; width:100%; aspect-ratio: 1;" src="https://bandcamp.com/EmbeddedPlayer/album=2299733542/size=large/bgcol=333333/linkcol=fe7eaf/minimal=true/transparent=true/" seamless><a href="https://rainefall.bandcamp.com/album/unaltered-music-collection">Unaltered: Music Collection by rainefall</a></iframe></div>

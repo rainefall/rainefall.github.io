@@ -1,0 +1,80 @@
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    text-align: center;
+}
+  
+/* Style the buttons inside the tab */
+.tab button {
+    border-radius: 32px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0px;
+    margin: 16px;
+    width: 16vw;
+    background-size: cover;
+}
+
+.tab button img {
+    border-radius: 32px;
+    width: 100%;
+    transition: 0.2s;
+}
+
+/* Pivot specific */
+.tab button#pivot {
+    background-image: url("https://cdn.discordapp.com/attachments/731295603153305612/1095262150118883328/image.png");
+}
+.tab button#pivot img:hover {
+    background-color: #ff73006b;
+}
+.tab button#pivot.active img {
+    background: #ff73006b;
+}
+
+/* Reflections specific */
+.tab button#reflections {
+    background-image: url("https://cdn.discordapp.com/attachments/432118435368140820/1083503629517979720/G9Vv4vCpMz.gif");
+}
+.tab button#reflections img:hover {
+    background-color: #008cff6b;
+}
+.tab button#reflections.active img {
+    background: #008cff6b;
+}
+
+/* Precognition specific */
+.tab button#precognition {
+    background-image: url("img/precog.gif");
+}
+.tab button#precognition img:hover {
+    background-color: #11ee746b;
+}
+.tab button#precognition.active img {
+    background: #11ee746b;
+}
+
+/* autorhythm specific */
+.tab button#autorhythm {
+    background-image: url("img/autorhythm.jpg");
+}
+.tab button#autorhythm img:hover {
+    background-color: #ff00406b;
+}
+.tab button#autorhythm.active img {
+    background: #ff00406b;
+}
+
+.tabcontent {
+    display: none;
+    border-top: none;
+    margin-bottom: 32px;
+}
+
+@media screen and (max-width: 800px) {
+    .tab button {
+        width: 32vw;
+    }
+}
